@@ -11,6 +11,8 @@
   --hover-icon-color: #31d0aa;
   --modal-background: #fcfcfc;
 
+  --navy-blue-modal: rgba(46, 47, 66, 0.4);
+
   /* others */
   --indent-col: 24px;
   --items: 3;
@@ -127,7 +129,6 @@ button {
 .btn {
   background-color: var(--primary-color);
   font-weight: 500;
-  font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.04em;
   color: var(--white);
@@ -203,7 +204,6 @@ button {
   display: block;
   padding: 24px 0;
   font-weight: 500;
-  font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: var(--main-dark);
@@ -251,7 +251,6 @@ button {
 }
 
 .header-address-link {
-  font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.02em;
   transition-duration: var(--anim);
@@ -431,7 +430,6 @@ button {
   padding: 40px 32px;
 
   color: var(--light-white);
-  font-size: 16px;
   line-height: 24px;
   letter-spacing: 0.32px;
 }
@@ -497,7 +495,6 @@ button {
 .footer-caption {
   color: var(--white);
 
-  font-size: 16px;
   line-height: 150%;
   letter-spacing: 0.02em;
   margin-bottom: 16px;
@@ -588,7 +585,7 @@ button {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(46, 47, 66, 0.4);
+  background-color: var(--navy-blue-modal);
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
@@ -704,7 +701,7 @@ button {
   border-radius: 4px;
   border-width: 1px;
   border-style: solid;
-  border-color: rgba(46, 47, 66, 0.4);
+  border-color: var(--navy-blue-modal);
   padding: 11px 38px;
   outline: transparent;
   transition-duration: var(--anim);
@@ -746,11 +743,11 @@ button {
   font-weight: 400;
   letter-spacing: 0.48px;
   line-height: 1.17;
-  color: rgba(46, 47, 66, 0.4);
+  color: var(--navy-blue-modal);
 }
 
 .form-comment::placeholder {
-  color: rgba(46, 47, 66, 0.4);
+  color: var(--navy-blue-modal);
 }
 
 .form-agreement {
@@ -770,7 +767,7 @@ button {
   margin-right: 8px;
 
   border-radius: 2px;
-  border: 1px solid rgba(46, 47, 66, 0.4);
+  border: 1px solid var(--navy-blue-modal);
   transition-duration: var(--anim);
   transition-timing-function: var(--timing-func);
   transition-property: border, background-color, fill;
