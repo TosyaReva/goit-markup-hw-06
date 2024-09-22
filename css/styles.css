@@ -462,17 +462,20 @@ button {
   align-items: baseline;
 }
 
-.footer-column-1 {
+.footer-column-one {
   display: inline-block;
   width: 264px;
   margin-right: 120px;
 }
 
-.footer-column-2 {
+.footer-column-two {
   display: inline-block;
   width: 208px;
 
   margin-right: 80px;
+}
+
+.footer-column- {
 }
 
 .footer-logo {
