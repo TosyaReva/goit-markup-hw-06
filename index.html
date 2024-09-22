@@ -74,7 +74,9 @@
       <section class="section hero">
         <div class="container">
           <h1 class="hero-title">Effective Solutions for Your Business</h1>
-          <button class="btn-hero" type="button">Order Service</button>
+          <button class="btn btn-hero js-open-modal" type="button">
+            Order Service
+          </button>
         </div>
       </section>
       <!-- #endregion Hero Section -->
@@ -618,5 +620,109 @@
       </div>
     </footer>
     <!-- #endregion Footer -->
+    <!-- #Modal region -->
+    <div class="backdrop js-modal is-open">
+      <div class="modal">
+        <button class="modal-btn js-close-modal" type="button">
+          <svg class="modal-btn-icon" width="8" height="8">
+            <use href="./images/icons.svg#icon-close-black"></use>
+          </svg>
+        </button>
+
+        <p class="modal-caption">
+          Leave your contacts and we will call you back
+        </p>
+
+        <form class="modal-form" name="modal_form">
+          <div class="form-wrapper">
+            <label class="form-label" for="userName">Name</label>
+
+            <div class="form-field">
+              <input
+                class="form-input"
+                type="text"
+                id="userName"
+                name="userName"
+                required
+              />
+              <svg class="form-icon" width="18" height="18">
+                <use href="./images/icons.svg#icon-person"></use>
+              </svg>
+            </div>
+          </div>
+
+          <div class="form-wrapper">
+            <label class="form-label" for="userPhone">Phone</label>
+            <div class="form-field">
+              <input
+                class="form-input"
+                type="tel"
+                id="userPhone"
+                name="userPhone"
+                required
+              />
+              <svg class="form-icon" width="18" height="24">
+                <use href="./images/icons.svg#icon-phone"></use>
+              </svg>
+            </div>
+          </div>
+
+          <div class="form-wrapper">
+            <label class="form-label" for="userEmail">Email</label>
+            <div class="form-field">
+              <input
+                class="form-input"
+                type="email"
+                id="userEmail"
+                name="userEmail"
+                required
+              />
+              <svg class="form-icon" width="18" height="24">
+                <use href="./images/icons.svg#icon-email"></use>
+              </svg>
+            </div>
+          </div>
+
+          <div class="form-wrapper">
+            <label class="form-label" for="userComment">Comment</label>
+            <textarea
+              class="form-input form-comment"
+              name="userComment"
+              id="userComment"
+              placeholder="Text input"
+            ></textarea>
+          </div>
+
+          <label class="form-agreement">
+            <input
+              class="visually-hidden"
+              type="checkbox"
+              name="userAgreement"
+              value="true"
+              checked
+            />
+            <span class="checkbox">
+              <svg class="checkbox-icon" width="10" height="8">
+                <use href="./images/icons.svg#check-mark"></use>
+              </svg>
+            </span>
+
+            <span class="form-agreement-text">
+              I accept the terms and conditions of the
+              <a
+                class="form-agreement-link"
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Privacy Policy
+              </a>
+            </span>
+          </label>
+          <button class="btn btn-form" type="submit">Send</button>
+        </form>
+      </div>
+    </div>
+    <!-- #end Modal region -->
   </body>
 </html>

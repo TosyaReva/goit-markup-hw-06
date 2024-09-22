@@ -9,6 +9,7 @@
   --light-white: #f4f4fd;
   --accent: #e7e9fc;
   --hover-icon-color: #31d0aa;
+  --modal-background: #fcfcfc;
 
   /* others */
   --indent-col: 24px;
@@ -120,6 +121,32 @@ button {
 
 .card-set-item {
   width: calc((100% - var(--items) - 1) * var(--indent-col) / var(--items));
+}
+
+/* Button */
+.btn {
+  background-color: var(--primary-color);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: var(--white);
+  margin: 0 auto;
+  display: block;
+  padding: 16px 32px;
+  border-radius: 4px;
+  border-width: 0;
+  min-width: 169px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+  transition-property: background-color;
+  transition-duration: var(--anim);
+  transition-timing-function: var(--timing-func);
+}
+
+.btn:hover,
+.btn:focus {
+  background-color: var(--pressed-state-color);
+  color: var(--white);
 }
 
 /* Header Section */
@@ -267,29 +294,7 @@ button {
 }
 
 .btn-hero {
-  background-color: var(--primary-color);
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 1.5;
-  letter-spacing: 0.04em;
-  color: var(--white);
-  margin: 0 auto;
   margin-top: 48px;
-  display: block;
-  padding: 16px 32px;
-  border-radius: 4px;
-  border-width: 0;
-  min-width: 169px;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
-  transition-property: background-color;
-  transition-duration: var(--anim);
-  transition-timing-function: var(--timing-func);
-}
-
-.btn-hero:hover,
-.btn-hero:focus {
-  background-color: var(--pressed-state-color);
-  color: var(--white);
 }
 
 /* Features Section */
@@ -527,4 +532,223 @@ button {
 .social-link:hover,
 .social-link:focus {
   background-color: var(--hover-icon-color);
+}
+/* modal region */
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(46, 47, 66, 0.4);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition-duration: var(--anim);
+  transition-timing-function: var(--timing-func);
+  transition-property: opacity;
+}
+
+.backdrop.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: initial;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-25%);
+  width: 90%;
+  max-width: 408px;
+  min-height: 584px;
+  border-radius: 4px;
+  background-color: var(--modal-background);
+  box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.2),
+    0px 1px 3px 0px rgba(0, 0, 0, 0.12), 0px 1px 1px 0px rgba(0, 0, 0, 0.14);
+  padding: 72px 24px;
+  transition-duration: var(--anim);
+  transition-timing-function: var(--timing-func);
+  transition-property: opacity, transform;
+}
+
+.backdrop.is-open .modal {
+  transform: translateX(-50%) translateY(-50%);
+  opacity: 1;
+}
+
+.modal-btn {
+  position: absolute;
+  padding: 0;
+  top: 24px;
+  right: 24px;
+  width: 24px;
+  height: 24px;
+  border: none;
+  border-radius: 50%;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0.1);
+  background-color: var(--accent);
+  fill: var(--main-dark);
+  transition: var(--anim), var(--timing-func);
+  transition-property: color;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition-duration: var(--anim);
+  transition-timing-function: var(--timing-func);
+  transition-property: border-color, background-color;
+}
+
+.modal-btn:hover,
+.modal-btn:focus {
+  background-color: var(--pressed-state-color);
+  fill: var(--white);
+}
+
+.modal-btn-icon {
+  stroke: currentColor;
+}
+
+.modal-caption {
+  color: var(--main-dark);
+  text-align: center;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 0.32px;
+  margin-bottom: 16px;
+}
+
+.modal-form {
+}
+
+.form-wrapper {
+  margin-bottom: 8px;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 4px;
+  color: #8e8f99;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 14px;
+  letter-spacing: 0.48px;
+}
+
+.form-field {
+  position: relative;
+}
+
+.form-input {
+  display: block;
+  width: 100%;
+  height: 40px;
+  border-radius: 4px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgba(46, 47, 66, 0.4);
+  padding: 11px 38px;
+  outline: transparent;
+  transition-duration: var(--anim);
+  transition-timing-function: var(--timing-func);
+  transition-property: border-color;
+}
+
+.form-input:focus,
+.form-input:active {
+  border-color: var(--primary-color);
+}
+
+.form-icon {
+  position: absolute;
+  top: 50%;
+  left: 16px;
+  transform: translateY(-50%);
+  fill: var(--main-dark);
+  pointer-events: none;
+  transition-duration: var(--anim);
+  transition-timing-function: var(--timing-func);
+  transition-property: fill;
+}
+
+.form-input:focus + .form-icon {
+  fill: var(--primary-color);
+}
+
+.form-comment {
+  display: block;
+  width: 100%;
+  height: 120px;
+  padding: 8px 16px;
+  resize: none;
+
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 116.667%;
+  letter-spacing: 0.48px;
+}
+
+.form-comment::placeholder {
+  color: rgba(46, 47, 66, 0.4);
+}
+
+.form-agreement {
+  display: block;
+}
+
+.checkbox {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  margin-right: 8px;
+
+  border-radius: 2px;
+  border: 1px solid rgba(46, 47, 66, 0.4);
+  transition-duration: var(--anim);
+  transition-timing-function: var(--timing-func);
+  transition-property: border-color, background-color;
+  cursor: pointer;
+}
+
+input[type="checkbox"]:checked + .checkbox {
+  background-color: var(--pressed-state-color);
+  border-color: transparent;
+}
+
+.checkbox-icon {
+  transition-duration: var(--anim);
+  transition-timing-function: var(--timing-func);
+  transition-property: opacity;
+  opacity: 0;
+  fill: var(--light-white);
+}
+
+input[type="checkbox"]:checked + .checkbox .checkbox-icon {
+  opacity: 1;
+}
+
+.form-agreement-text {
+  color: #8e8f99;
+
+  font-size: 12px;
+  line-height: 116.667%;
+  letter-spacing: 0.48px;
+}
+
+.form-agreement-link {
+  color: var(--primary-color);
+
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.48px;
+  text-decoration-line: underline;
+}
+
+.btn-form {
+  margin-top: 24px;
 }
