@@ -473,6 +473,8 @@ button {
 .footer-column-2 {
   display: inline-block;
   width: 208px;
+
+  margin-right: 80px;
 }
 
 .footer-logo {
@@ -497,7 +499,7 @@ button {
 
   font-size: 16px;
   line-height: 150%;
-  letter-spacing: 0.32px;
+  letter-spacing: 0.02em;
   margin-bottom: 16px;
   font-weight: 500;
 }
@@ -533,6 +535,43 @@ button {
 .social-link:focus {
   background-color: var(--hover-icon-color);
 }
+
+.footer-form {
+  display: flex;
+  gap: 24px;
+}
+
+.footer-form-field {
+  border-radius: 4px;
+  border: 1px solid var(--white);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+  background-color: transparent;
+  padding: 8px 16px;
+  width: 264px;
+  height: 40px;
+  font-size: 12px;
+  line-height: 2;
+  letter-spacing: 0.04em;
+  color: var(--white);
+}
+
+.footer-form-field::placeholder {
+  color: var(--white);
+}
+
+.btn-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 165px;
+  height: 40px;
+}
+
+.footer-form-icon {
+  margin-left: 16px;
+  fill: var(--white);
+}
+
 /* modal region */
 .backdrop {
   position: fixed;
@@ -546,7 +585,7 @@ button {
   pointer-events: none;
   transition-duration: var(--anim);
   transition-timing-function: var(--timing-func);
-  transition-property: opacity;
+  transition-property: opacity, visibility;
 }
 
 .backdrop.is-open {
@@ -567,10 +606,10 @@ button {
   background-color: var(--modal-background);
   box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.2),
     0px 1px 3px 0px rgba(0, 0, 0, 0.12), 0px 1px 1px 0px rgba(0, 0, 0, 0.14);
-  padding: 72px 24px;
+  padding: 72px 24px 24px 24px;
   transition-duration: var(--anim);
   transition-timing-function: var(--timing-func);
-  transition-property: opacity, transform;
+  transition-property: transform;
 }
 
 .backdrop.is-open .modal {
@@ -585,7 +624,6 @@ button {
   right: 24px;
   width: 24px;
   height: 24px;
-  border: none;
   border-radius: 50%;
   border-width: 1px;
   border-style: solid;
@@ -599,17 +637,21 @@ button {
   justify-content: center;
   transition-duration: var(--anim);
   transition-timing-function: var(--timing-func);
-  transition-property: border-color, background-color;
+  transition-property: border, background-color;
 }
 
 .modal-btn:hover,
 .modal-btn:focus {
   background-color: var(--pressed-state-color);
   fill: var(--white);
+  border: none;
 }
 
 .modal-btn-icon {
   stroke: currentColor;
+  transition-duration: var(--anim);
+  transition-timing-function: var(--timing-func);
+  transition-property: fill;
 }
 
 .modal-caption {
@@ -628,14 +670,18 @@ button {
   margin-bottom: 8px;
 }
 
+.form-wrapper-comment {
+  margin-bottom: 16px;
+}
+
 .form-label {
   display: block;
   margin-bottom: 4px;
   color: #8e8f99;
   font-size: 12px;
   font-weight: 400;
-  line-height: 14px;
   letter-spacing: 0.48px;
+  line-height: 1.17;
 }
 
 .form-field {
@@ -655,6 +701,7 @@ button {
   transition-duration: var(--anim);
   transition-timing-function: var(--timing-func);
   transition-property: border-color;
+  background-color: transparent;
 }
 
 .form-input:focus,
@@ -684,11 +731,13 @@ button {
   height: 120px;
   padding: 8px 16px;
   resize: none;
+  background-color: transparent;
 
   font-size: 12px;
   font-weight: 400;
-  line-height: 116.667%;
   letter-spacing: 0.48px;
+  line-height: 1.17;
+  color: rgba(46, 47, 66, 0.4);
 }
 
 .form-comment::placeholder {
@@ -697,6 +746,10 @@ button {
 
 .form-agreement {
   display: block;
+}
+
+.form-checkbox {
+  margin-bottom: 24px;
 }
 
 .checkbox {
@@ -711,13 +764,15 @@ button {
   border: 1px solid rgba(46, 47, 66, 0.4);
   transition-duration: var(--anim);
   transition-timing-function: var(--timing-func);
-  transition-property: border-color, background-color;
+  transition-property: border, background-color, fill;
   cursor: pointer;
+  fill: transparent;
 }
 
-input[type="checkbox"]:checked + .checkbox {
+input[type="checkbox"]:checked + .form-agreement .checkbox {
   background-color: var(--pressed-state-color);
-  border-color: transparent;
+  border: none;
+  fill: var(--light-white);
 }
 
 .checkbox-icon {
@@ -725,10 +780,9 @@ input[type="checkbox"]:checked + .checkbox {
   transition-timing-function: var(--timing-func);
   transition-property: opacity;
   opacity: 0;
-  fill: var(--light-white);
 }
 
-input[type="checkbox"]:checked + .checkbox .checkbox-icon {
+input[type="checkbox"]:checked + .form-agreement .checkbox .checkbox-icon {
   opacity: 1;
 }
 
@@ -736,8 +790,9 @@ input[type="checkbox"]:checked + .checkbox .checkbox-icon {
   color: #8e8f99;
 
   font-size: 12px;
-  line-height: 116.667%;
-  letter-spacing: 0.48px;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
+  font-size: 12px;
 }
 
 .form-agreement-link {
@@ -750,5 +805,4 @@ input[type="checkbox"]:checked + .checkbox .checkbox-icon {
 }
 
 .btn-form {
-  margin-top: 24px;
 }
