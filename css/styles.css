@@ -553,6 +553,15 @@ button {
   line-height: 2;
   letter-spacing: 0.04em;
   color: var(--white);
+  transition-duration: var(--anim);
+  transition-timing-function: var(--timing-func);
+  transition-property: border-color;
+  outline: transparent;
+}
+
+.footer-form-field:focus,
+.footer-form-field:active {
+  border-color: var(--primary-color);
 }
 
 .footer-form-field::placeholder {
