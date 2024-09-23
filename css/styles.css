@@ -603,7 +603,7 @@ button {
   top: 50%;
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
-  max-width: 408px;
+  width: 408px;
   min-height: 584px;
   border-radius: 4px;
   background-color: var(--modal-background);
