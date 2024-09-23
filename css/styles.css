@@ -463,16 +463,11 @@ button {
 }
 
 .footer-column-one {
-  display: inline-block;
-  width: 264px;
   margin-right: 120px;
 }
 
 .footer-column-two {
-  display: inline-block;
-  width: 208px;
-
-  margin-right: 80px;
+  margin-right: auto;
 }
 
 .footer-column-three {
@@ -607,8 +602,7 @@ button {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translateX(-50%) translateY(-25%);
-  width: 90%;
+  transform: translateX(-50%) translateY(-50%);
   max-width: 408px;
   min-height: 584px;
   border-radius: 4px;
