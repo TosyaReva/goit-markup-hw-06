@@ -1,4 +1,4 @@
-/* main */
+/* #region  main */
 :root {
   /* colors */
   --main-dark: #2e2f42;
@@ -67,11 +67,27 @@ button {
 }
 
 .container {
+  /* max-width: 320px; */
+  padding: 0 16px;
+  margin: 0 auto;
   width: 1158px;
   margin: 0 auto;
   /* outline: 2px solid red; */
   outline-offset: -2px;
   padding: 0 15px;
+}
+
+@media only screen and (max-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .container {
+    max-width: 320px;
+    padding: 0 16px;
+  }
 }
 
 .title {
@@ -90,9 +106,29 @@ button {
   padding: 120px 0;
 }
 
+@media only screen and (max-width: 320px) {
+  .section {
+    padding: 96px 0;
+  }
+}
+
 .subsection {
   line-height: 1.5;
   letter-spacing: 0.02em;
+}
+@media only screen and (max-width: 320px) {
+  .subsection {
+    font-weight: 500;
+  }
+}
+
+.subtitle {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  color: var(--main-dark);
+  margin-bottom: 8px;
 }
 
 .visually-hidden {
@@ -112,7 +148,9 @@ button {
   fill: var(--light-white);
 }
 
-/* Card set */
+/* #endregion  main */
+
+/* #region  Card set */
 .card-set {
   display: flex;
   justify-content: center;
@@ -125,7 +163,9 @@ button {
   width: calc((100% - var(--items) - 1) * var(--indent-col) / var(--items));
 }
 
-/* Button */
+/* #endregion  Card set */
+
+/* #region  Button */
 .btn {
   background-color: var(--primary-color);
   font-weight: 500;
@@ -150,7 +190,9 @@ button {
   color: var(--white);
 }
 
-/* Header Section */
+/* #endregion  Button */
+
+/* #region Header Section */
 
 .header {
   border-bottom: 1px solid #e7e9fc;
@@ -172,6 +214,12 @@ button {
   flex-grow: 1;
 }
 
+@media only screen and (max-width: 320px) {
+  .header-nav {
+    margin-right: 0;
+  }
+}
+
 .logo {
   font-family: "Raleway", sans-serif;
   font-weight: 700;
@@ -186,6 +234,13 @@ button {
   margin-right: 76px;
 }
 
+@media only screen and (max-width: 320px) {
+  .header-logo {
+    margin-right: 0;
+    padding: 16px 0;
+  }
+}
+
 .header-logo-dark {
   color: var(--main-dark);
 }
@@ -194,6 +249,12 @@ button {
   display: flex;
   gap: 40px;
   align-items: center;
+}
+
+@media only screen and (max-width: 320px) {
+  .header-nav-list {
+    display: none;
+  }
 }
 
 .header-nav-item {
@@ -241,14 +302,23 @@ button {
   font-style: normal;
 }
 
+@media only screen and (max-width: 320px) {
+  .header-address {
+    display: none;
+  }
+}
+
 .header-address-list {
   display: flex;
   align-items: center;
   gap: 40px;
 }
 
-.header-address-item {
-}
+/* @media only screen and(max-width:767.98) {
+  .header-address-list {
+    display: none;
+  }
+} */
 
 .header-address-link {
   line-height: 1.5;
@@ -263,7 +333,9 @@ button {
   color: var(--pressed-state-color);
 }
 
-/* Hero Section */
+/* #endregion Header Section */
+
+/* #region  Hero Section */
 
 .hero {
   background-color: var(--main-dark);
@@ -281,6 +353,12 @@ button {
   margin: 0 auto;
 }
 
+@media only screen and (max-width: 320px) {
+  .hero {
+    padding: 72px 0;
+  }
+}
+
 .hero-title {
   font-weight: 700;
   font-size: 56px;
@@ -292,11 +370,33 @@ button {
   margin: 0 auto;
 }
 
+@media only screen and (max-width: 320px) {
+  .hero-title {
+    font-size: 36px;
+    line-height: 1.11111;
+    margin: 0 52px;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .hero {
+    padding: 72px 0;
+  }
+}
+
 .btn-hero {
   margin-top: 48px;
 }
 
-/* Features Section */
+@media only screen and (max-width: 320px) {
+  .btn-hero {
+    margin-top: 72px;
+  }
+}
+
+/* #endregion  Hero Section */
+
+/* #region  Features Section */
 
 .services {
 }
@@ -310,8 +410,23 @@ button {
   gap: 24px;
 }
 
+@media only screen and (max-width: 320px) {
+  .services-list {
+    flex-wrap: wrap;
+    column-gap: 0;
+  }
+}
+
 .service-item {
-  width: 264px;
+  width: 100%;
+}
+
+@media only screen and (max-width: 320px) {
+  .services-list {
+    flex-wrap: wrap;
+    column-gap: 0;
+    row-gap: 72px;
+  }
 }
 
 .service-wrapper {
@@ -326,22 +441,33 @@ button {
   background-color: var(--light-white);
 }
 
+@media only screen and (max-width: 320px) {
+  .service-wrapper {
+    display: none;
+  }
+}
+
 .service-icon {
 }
 
-.subtitle {
-  font-weight: 500;
-  font-size: 20px;
-  line-height: 1.2;
-  letter-spacing: 0.02em;
-  color: var(--main-dark);
-  margin-bottom: 8px;
+.service-subtitle {
+}
+
+@media only screen and (max-width: 320px) {
+  .service-subtitle {
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 1.11111;
+    text-align: center;
+  }
 }
 
 .our-services {
 }
 
-/* Team Section */
+/* #endregion  Features Section */
+
+/* #region  Team Section */
 
 .team {
   background-color: var(--light-white);
@@ -386,7 +512,9 @@ button {
   background-color: var(--pressed-state-color);
 }
 
-/* Portfolio Section */
+/* #endregion  Team Section */
+
+/* #region  Portfolio */
 
 .portfolio {
 }
@@ -401,6 +529,17 @@ button {
 .portfolio-wrapper {
   position: relative;
   overflow: hidden;
+}
+
+@media only screen and (max-width: 320px) {
+  .portfolio-wrapper img {
+    object-fit: cover;
+    height: 100%;
+  }
+
+  .portfolio-wrapper {
+    height: 280px;
+  }
 }
 
 .portfolio-item {
@@ -450,7 +589,9 @@ button {
 .our-portfolio {
 }
 
-/* Footer */
+/* #endregion  Portfolio */
+
+/* #region  Footer */
 
 .site-footer {
   background: var(--main-dark);
@@ -460,6 +601,14 @@ button {
 .footer-container {
   display: flex;
   align-items: baseline;
+}
+
+@media only screen and (max-width: 320px) {
+  .footer-container {
+    flex-wrap: wrap;
+    margin-right: 0;
+    row-gap: 72px;
+  }
 }
 
 .footer-column-one {
@@ -473,10 +622,29 @@ button {
 .footer-column-three {
 }
 
+@media only screen and (max-width: 320px) {
+  .footer-column-one,
+  .footer-column-two {
+    margin-right: 0;
+    width: 100%;
+  }
+
+  .footer-column-two {
+    text-align: center;
+  }
+}
+
 .footer-logo {
   margin-bottom: 16px;
   height: 24px;
   display: inline-block;
+}
+
+@media only screen and (max-width: 320px) {
+  .footer-logo {
+    text-align: center;
+    display: block;
+  }
 }
 
 .logo-light {
@@ -490,6 +658,12 @@ button {
   /* outline: 2px solid red; */
 }
 
+@media only screen and (max-width: 320px) {
+  .footer-subsection {
+    font-weight: unset;
+  }
+}
+
 .footer-caption {
   color: var(--white);
 
@@ -499,12 +673,25 @@ button {
   font-weight: 500;
 }
 
+@media only screen and (max-width: 320px) {
+  .footer-caption {
+    text-align: center;
+  }
+}
+
 .socials {
   display: flex;
   gap: 16px;
 
   /* outline: 2px solid red; */
 }
+
+@media only screen and (max-width: 320px) {
+  .socials {
+    justify-content: center;
+  }
+}
+
 .socials-item {
   width: 40px;
   height: 40px;
@@ -536,6 +723,13 @@ button {
   gap: 24px;
 }
 
+@media only screen and (max-width: 320px) {
+  .footer-form {
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+}
+
 .footer-form-field {
   border-radius: 4px;
   border: 1px solid var(--white);
@@ -550,8 +744,22 @@ button {
   color: var(--white);
   transition-duration: var(--anim);
   transition-timing-function: var(--timing-func);
-  transition-property: border-color;
+  transition-property: border-color, opacity;
   outline: transparent;
+}
+
+@media only screen and (max-width: 320px) {
+  .footer-form-label {
+    width: 100%;
+  }
+
+  .footer-form-field {
+    width: 100%;
+  }
+
+  .footer-form-field:not(:focus):not(:active) {
+    opacity: 0.3;
+  }
 }
 
 .footer-form-field:focus,
@@ -571,12 +779,19 @@ button {
   height: 40px;
 }
 
+@media only screen and (max-width: 320px) {
+  .btn-footer {
+    padding: 8px 24px;
+  }
+}
+
 .footer-form-icon {
   margin-left: 16px;
   fill: var(--white);
 }
+/* #endregion  Footer */
 
-/* modal region */
+/* #region  Modal */
 .backdrop {
   position: fixed;
   top: 0;
@@ -809,3 +1024,26 @@ input[type="checkbox"]:checked + .form-agreement .checkbox .checkbox-icon {
 
 .btn-form {
 }
+/* #endregion  Modal */
+
+/* #region Mobile menu */
+.mobile-menu-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 24px;
+  min-height: 24px;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+}
+
+@media only screen and (min-width: 768px) {
+  .mobile-menu-btn {
+    display: none;
+  }
+}
+
+.mobile-menu-icon {
+}
+/* #endregion Mobile menu */
