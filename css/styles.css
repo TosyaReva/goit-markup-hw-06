@@ -340,6 +340,12 @@ button {
   color: var(--pressed-state-color);
 }
 
+@media only screen and (min-width: 1158px) {
+  .header-address-list {
+    font-size: 16px;
+  }
+}
+
 /* #endregion Header Section */
 
 /* #region  Hero Section */
@@ -731,6 +737,7 @@ button {
   align-items: baseline;
   flex-wrap: wrap;
   row-gap: 72px;
+  width: 584рх;
 }
 
 @media only screen and (min-width: 768px) {
